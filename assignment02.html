@@ -56,14 +56,13 @@
         minBudget: 10000
       }
     ];
-	console.log('hello world!');
 	for (i = 0; i < people.length; i++) {
 		var array = [];
 		for (j = 0; j < cars.length; j++) {
 			if(people[i].minBudget >= cars[j].price)
 				array.push(cars[j]);
 		}
-		console.log('For ', people[i], ", affordable cars: ", array);
+		console.log('User ', people[i], ", can afford: ", array);
 		var user = JSON.stringify(people[i]);
 		var affordableCars = JSON.stringify(array);
 		document.write('user ', user, ' can afford: ', affordableCars);
