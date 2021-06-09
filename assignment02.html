@@ -64,6 +64,10 @@
 				array.push(cars[j]);
 		}
 		console.log('For ', people[i], ", affordable cars: ", array);
+		var user = JSON.stringify(people[i]);
+		var affordableCars = JSON.stringify(array);
+		document.write('user ', user, ' can afford: ', affordableCars);
+		document.write("<br><br>");
 	}
 </script>
 </body>
