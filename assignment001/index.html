@@ -5,14 +5,10 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<script src="scripts/app.js"></script>
-	<body>
+	<body onload="createMoviesStrip()">
 		<div class="divHeaderSandwich"></div>
 		<div class="divHeaderFilling"><span class="spanHeaderFilling"><b>Movies Now...</b></span></div>
 		<div class="divHeaderSandwich"></div>
-		<div class="divMovieStripContainer" ID="DIV_MOVIESTRIP_CONTAINER">
-			<script type="text/javascript">
-				createMoviesStrip();//as there is no onload() for div, calling manually
-			</script>
-		</div>
+		<div class="divMovieStripContainer" ID="DIV_MOVIESTRIP_CONTAINER"></div>
 	</body>
 </html>
