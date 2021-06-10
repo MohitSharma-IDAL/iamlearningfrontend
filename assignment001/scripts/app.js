@@ -83,6 +83,7 @@
 	for(ix = 0 ; ix < movies.length; ix++){
 		moviesMap[movies[ix].id] = movies[ix];
 	}
+	
 	var userWishlist = [];
 	
 	var movieNameDefaultSize = '1.5vw';
@@ -164,6 +165,7 @@
 					anchorMovieWiki.setAttribute('rel', "noopener noreferrer");
 					anchorMovieWiki.setAttribute('class', "anchorMovieWiki");
 						var text8 = document.createTextNode('Wiki');
+					anchorMovieWiki.setAttribute('onclick', "event.stopPropagation();");
 					anchorMovieWiki.appendChild(text8);
 				spanHyperLink.appendChild(anchorMovieWiki);
 			divMovieInfo.appendChild(h2Info);
@@ -198,11 +200,14 @@
 			console.log('Removed from Wishlist: ', moviesMap[movie].name);
 			console.log('Wishlist: ', userWishlist);
 			wishlistPng.style.display = 'none';
+			clickedButton.innerHTML = "Wishlist";
 		}else{
 			userWishlist.push(moviesMap[movie].name);
 			console.log('Wishlist: ', userWishlist);
 			wishlistPng.style.display = 'block';
+			clickedButton.innerHTML = "Remove Wishlist";
 		}
+		event.stopPropagation();
 	}
 	function expand(clickeddiv){
 		var elementId = getIdOfElement('CDIV_',clickeddiv.id);
@@ -220,11 +225,5 @@
 			infoDiv.style.display = 'block';
 			hMovieName.style.top = '15%';
 			hMovieName.setAttribute('font-size', movieNameExpandSize);
-		}
-	}
-	function populateInfo(callingFrom){
-		alert(callingFrom.id);
-		if(callingFrom.id == 1){
-			callingFrom.style = "width:1000px; background-color=black";
 		}
 	}
